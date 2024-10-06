@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Climate Change Awareness & Discovery of CO2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #04574a; /* Dark Green */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #00332f; /* Darker Green */
+            border-radius: 5px;
+        }
+
+        .image-container {
+        position: relative; /* Enables positioning of child elements */
+        text-align: center; /* Centers text horizontally within the container */
+    }
+
+    /* Full-width background image */
+    .background-image {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Centered text styling */
+    .centered-text {
+        color: white; /* Text color */
+        font-size: 36px; /* Adjust font size as needed */
+        font-weight: bold;
+        text-align: center; /* Center-aligns text */
+        padding: 10px 20px; /* Adds some space around the text */
+        border-radius: 8px; /* Optional: Rounds the text box edges */
+        max-width: 80%; /* Restricts the width of the text box */
+    }
+/* Crisis content flexbox layout */
+.crisis-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0; /* Adjusted to remove excess space */
+}
+
+.image-placeholder {
+    flex: 0 0 45%;
+    margin-right: 30px;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow effect */
+    object-fit: cover; /* Ensure the image fits the container without distortion */
+}
+
+/* Reset margins and paddings globally */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Crisis content flexbox layout */
+.crisis-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0; /* Adjusted to remove excess space */
+}
+
+.image-placeholder {
+    flex: 0 0 45%;
+    margin-right: 30px;
+    height: 400px; /* Increase the height of the container */
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow effect */
+    object-fit: cover; /* Ensure the image fits the container without distortion */
+}
+
+.crisis-info {
+    flex: 0 0 50%;
+    text-align: left;
+}
+
+/* Key Observations styling */
+.observations {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.observations h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.observations ul {
+    margin-left: 20px; /* Adds space to the left of bullet points */
+    padding-left: 20px; /* Adds space within the list items */
+    list-style-type: disc; /* Ensure bullet points are used */
+}
+
+.observations li {
+    margin-bottom: 10px;
+}
+
+.observations p {
+    margin-top: 15px;
+}
+
+/* Remove unwanted background color or padding from the body and footer */
+body, footer {
+    margin: 0;
+    padding: 0;
+    background-color: transparent; /* Ensure no background color is causing a gray bar */
+}
+.container {
+  background: linear-gradient(to bottom, #e0f7fa, #e8f5e9);
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+}
+
+.left-column {
+  flex: 2;
+  padding: 20px;
+}
+
+.right-column {
+  flex: 1;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cta-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.flip-card-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.flip-card-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.flip-card {
+    position: relative;
+    width: 400px; /* Increased width */
+    height: 300px; /* Increased height */
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px; /* Added padding for better spacing */
+    box-sizing: border-box; /* Ensures padding doesn't affect the total width/height */
+}
+
+.front {
+    background-color: #fff;
+    color: #333;
+}
+
+.back {
+    background-color: #333;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.flip-card:hover {
+    transform: rotateY(180deg);
+}
+
+
+
+    /* Section Styling */
+        .section {
+            min-height: 100vh;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section#home {
+      position: relative;
+      text-align: left;
+      color: white;
+      width: 100%;
+    }
+
+    section#home img {
+      width: 100%;
+      height: auto;
+    }
+
+    .centered-text {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      transform: translate(-10%, -20%);
+      font-size: 3rem;
+      font-weight: bold;
+      color: black;
+      opacity: 0;
+      transition: opacity 1s ease-in, transform 1s ease-in;
+    }
+
+    /* Fade-in effect when section comes into view */
+    section#home:hover .centered-text {
+      opacity: 1;
+      transform: translate(0, 0); /* Reset the translate effect on hover */
+    }
+
+    .centered-text span {
+      display: block;
+    }
+
+
+    
+        /* Information Section */
+        #info {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        #info h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #7ec9bc;
+        }
+
+        #info p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Discovery Section */
+        #discovery {
+            background-color: #04574a; /* Dark Green */
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        #discovery h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #discovery p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #e0e0e0;
+        }
+
+        #discovery p::first-letter {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffdf00;
+        }
+
+        /* New Section */
+        #crisis {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        #crisis h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #7ec9bc;
+        }
+
+        #crisis p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #333;
+        }
+
+        /* Crisis section layout (Newly added CSS) */
+        .crisis-content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            max-width: 1000px;
+        }
+
+       /* Image Placeholder */
+.image-placeholder {
+    flex: 0 0 45%;
+    margin-right: 30px;
+    height: 300px; /* Set a fixed height for the container */
+    overflow: hidden; /* Ensure the image doesn't overflow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    border-radius: 10px; /* Keep the border-radius consistent with the container */
+}
+
+        .crisis-content .crisis-info {
+            flex: 0 0 50%;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        
+        @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.fade-in-on-scroll {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.fade-in-on-scroll.is-visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-in-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#carbon-cycle-section {
+    padding: 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure it takes up full height */
+}
+
+#carbon-cycle-section {
+    padding: 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 600px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 160%;
+    height: 160%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front {
+    background-image: url('carbon cycle.jpg'); /* Point to your image */
+    background-size: cover;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-back {
+    background-color: #f8f8f8;
+    color: black;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    overflow-y: auto; /* Ensure that the content can scroll vertically */
+    overflow-x: hidden;
+}
+
+.flip-card-back p {
+    margin: 0;
+}
+
+
+        /* Smooth Scrolling Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #home h1 {
+                font-size: 2.5rem;
+            }
+
+            #info h1 {
+                font-size: 2.5rem;
+            }
+
+            #discovery h1 {
+                font-size: 2.2rem;
+            }
+
+            .image-placeholder {
+                height: 200px;
+            }
+
+            .crisis-content {
+                flex-direction: column;
+            }
+
+            .crisis-content .image-placeholder {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .crisis-content .crisis-info {
+                margin-top: 0;
+            }
+        }
+        .section {
+            padding: 50px;
+            text-align: center; /* Center content */
+        }
+
+        .narrative {
+            max-width: 800px; /* Max width for readability */
+            margin: 0 auto; /* Center the narrative */
+            line-height: 1.6; /* Improved line spacing */
+            color: #555; /* Darker text color for contrast */
+        }
+
+        /* Heading styling */
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            padding: 50px;
+            text-align: center; /* Center content */
+        }
+
+        .narrative {
+            max-width: 800px; /* Max width for readability */
+            margin: 0 auto; /* Center the narrative */
+            line-height: 1.6; /* Improved line spacing */
+            color: #555; /* Darker text color for contrast */
+        }
+
+        /* Heading styling */
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* Slider container */
+        .slider {
+            position: relative;
+            width: 50%; /* Set width for the slider */
+            margin: 0; /* Align to the left without margin */
+            float: left; /* Float the slider to the left */
+            overflow: hidden; /* Hide overflow */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Image styles */
+        .slide {
+            display: none; /* Hide all images by default */
+            width: 100%; /* Image width set to slider width */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Show the first image */
+        .slide.active {
+            display: block; /* Show only the active image */
+        }
+
+        /* Navigation buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .prev {
+            left: 10px; /* Position for previous button */
+        }
+
+        .next {
+            right: 10px; /* Position for next button */
+        }
+
+        /* Sources Section Specific Styling */
+#sources {
+    background-color: #73af8e; /*  green background */
+    padding: 50px; /* Add padding for better spacing */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect for depth */
+}
+
+
+header {
+            background-color: #004d40; /* Dark green */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease; /* Fade in animation for header */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px; /* Gap between cards */
+            margin: 20px;
+            max-width: 1200px; /* Max width for the container */
+            margin-left: auto; /* Centering */
+            margin-right: auto; /* Centering */
+        }
+
+        .card {
+            background-color: #e0f7fa; /* Light green */
+            border-radius: 10px;
+            height: 300px; /* Height of the card */
+            perspective: 1000px; /* Perspective for 3D effect */
+            position: relative;
+            overflow: hidden;
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: transform 0.6s; /* Smooth transition for hover effect */
+        }
+
+        .card-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d; /* Preserve 3D effect */
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg); /* Flip animation */
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backface-visibility: hidden; /* Hide the back when front is visible */
+            padding: 20px; /* Padding for better text placement */
+            text-align: center; /* Center text */
+        }
+
+        .card-front {
+            background-color: #ffffff; /* White background for front */
+            color: #004d40; /* Dark green text */
+        }
+
+        .card-front img {
+            max-width: 100%; /* Responsive image */
+            max-height: 200px; /* Set max height to prevent overflow */
+            object-fit: cover; /* Maintain aspect ratio */
+            border-radius: 10px; /* Match card's border radius */
+        }
+
+        .card-front h3 {
+            position: absolute; /* Absolute positioning */
+            top: 10px; /* Distance from the top */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center alignment */
+            color: white; /* White text color for better contrast */
+            background-color: rgba(0, 77, 64, 0.7); /* Semi-transparent background */
+            padding: 5px 10px; /* Padding for the text */
+            border-radius: 5px; /* Rounded corners for the heading */
+        }
+
+        .card-back {
+            background-color: #004d40; /* Dark green */
+            color: white; /* White text */
+            transform: rotateY(180deg); /* Position the back card */
+            font-size: 1.2em; /* Adjusted font size for back */
+            font-weight: bold; /* Bold text for back */
+            display: flex; /* Flexbox for centering */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            padding: 20px; /* Padding for back */
+            box-sizing: border-box; /* Ensure padding is included in height */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #004d40; /* Dark green */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            animation: fadeIn 1s ease; /* Fade in animation for footer */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+        }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+section {
+    perspective: 1000px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+section {
+    perspective: 1000px;
+}
+
+/* New Climate Flip Card Styling */
+.climate-flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.climate-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg); /* Ensure front shows first */
+}
+
+section:hover .climate-flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+section {
+    perspective: 1000px; /* Needed for the 3D effect */
+}
+
+/* General styles */
+body {
+    background-color: #f4f4f9;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+/* Ripple card section */
+#ripple-cards {
+    background-color: #04574a;
+    width: 100vw; /* Full width of the viewport */
+    height: 120vh; /* Full height of the viewport */
+    display: flex; /* Use flexbox for centering content */
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Start from the top */
+    padding-top: 40px; 
+    box-sizing: border-box;
+}
+
+#ripple-cards h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+#ripple-cards p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 200px; /* Space between rows */
+    column-gap: 300px; /* Space between cards in the same row */
+    justify-items: center;
+    padding-bottom:0px;
+}
+
+/* Ripple card styles */
+.ripple-card {
+    background-color: transparent;
+    width: 300px;
+    height: 150px;
+    perspective: 1000px; /* 3D perspective for the flip effect */
+}
+
+.ripple-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.ripple-card:hover .ripple-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and back face of the ripple card */
+.ripple-card-front, .ripple-card-back {
+    position: absolute;
+    width: 150%;
+    height: 90%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+.ripple-card-front {
+    background-color: #fff;
+    color: rgb(255, 255, 255);
+}
+
+.ripple-card-back {
+    background-color: white;
+    color: white;
+    width: 150%;
+    height: 90%;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Card title and image */
+.card-title {
+    background-color: #16a085;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+}
+
+
+
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    height: 300px; /* Fixed height for the grid item */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: rgb(243, 240, 240);
+    overflow: hidden; /* Ensures that overflow is hidden */
+}
+
+.card-image {
+    width: 100%;         /* Takes full width of the container */
+    height: 280px;       /* Fixed height for the image */
+    object-fit: cover;   /* Makes sure the image covers the box */
+    border-radius: 4px;  /* Rounded corners */
+}
+
+.ripple-card-back h2 {
+    margin: 10px 0;
+}
+
+.ripple-card-back p {
+    margin: 0 15px;
+}
+body {
+    margin: 0; /* Remove default margin */
+}
+
+
+
+#ripple-cards {
+    margin-top: 250px; /* Adjust this value as needed */
+}
+/* Full-screen Intro Section */
+.hero {
+            position: relative;
+            height: 100vh;
+            background: url('soln.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Stack items vertically */
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s;
+            z-index: 10; /* Ensure h1 is above other content */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .cta-button {
+            background-color: #4caf50; /* Green color */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background 0.3s, transform 0.3s;
+            z-index: 10; /* Ensure button is above other content */
+            position: relative;
+            display: inline-block; /* Ensure it's inline-block */
+            animation: slideUp 1s forwards;
+            line-height: 1; /* Adjust line height for better centering */
+        }
+
+        .cta-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+            transform: scale(1.05);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .content {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 30px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: slideUp 1s forwards;
+        }
+
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            flex: 1 1 30%; /* Flexbox for responsive layout */
+            max-width: 350px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .content {
+                font-size: 0.9em;
+            }
+        }
+
+        footer {
+  background-color: #04574a; /* Dark green background */
+  padding: 30px;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center; /* Center align text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.footer-contact h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.footer-contact a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.social-media {
+  margin-top: 15px;
+}
+
+.social-media a {
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.social-media a:hover {
+  color: #c0ffb3; /* Lighter green on hover */
+}
+
+/* General reset to remove margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Centering video in the container */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Light background color */
+}
+
+/* Styling the video */
+.styled-video {
+  width: 80%; /* Video takes up 80% of the viewport width */
+  max-width: 800px; /* Maximum width */
+  border: 5px solid #333; /* Border around the video */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Drop shadow */
+  background-color: #000; /* Background color */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add hover effect on video */
+.styled-video:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Make the video responsive */
+@media (max-width: 768px) {
+  .styled-video {
+    width: 95%; /* Take more space on smaller screens */
+  }
+}
+
+/* General Section Styling */
+.section {
+            padding: 50px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        /* Video Container */
+        .video-container {
+            margin: 0 auto;
+            width: 80%; /* Adjust width as needed */
+        }
+
+        /* Style the video */
+        video {
+            width: 100%; /* Make the video responsive */
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #myVideo {
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Customizing control bar colors */
+.video-js .vjs-control-bar {
+  background-color: #555;
+}
+
+.video-js .vjs-play-control, 
+.video-js .vjs-volume-control,
+.video-js .vjs-fullscreen-control {
+  color: white;
+}
+
+    </style>
+</head>
+<body>
+
+    
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#info">Introduction</a></li>
+            <li><a href="#discovery">Discovery</a></li>
+            <li><a href="#crisis">Crisis</a></li>
+            <li><a href="#sources">Sources</a></li>
+            <li><a href="#carbon-cycle">Carbon Cycle</a></li>
+            <li><a href="#ripple-cards">Effects</a></li>
+            <li><a href="#vision">Solution</a></li>
+            
+        </ul>
+    </nav>
+<!----home -->
+    <section id="home">
+        <img src="backimage.jpg" alt="CO2 Background Image">
+        <div class="centered-text">
+          <span>From Shadows to Solutions: Tackling CO2's Impact on </span>
+          <span>Earth’s Climate</span>
+        </div>
+      </section>
+
+    <!-- Information Section -->
+   
+    <section id="info" class="section">
+        <!-- Add your image here -->
+        <img src="introduction.png" alt="CO2 Impact Image">
+        
+        <div>
+            <h1>Introduction</h1>
+            <p>In the invisible dance of gases swirling through Earth's atmosphere, one gas in particular is wreaking havoc on our delicate climate balance: carbon dioxide (CO2). Often dubbed the “silent polluter,” CO2 is naturally part of the Earth's carbon cycle, but human activities have driven it to unprecedented levels. From fossil fuel combustion to deforestation, our actions are releasing billions of tons of this gas into the air each year. And while it may be odourless and invisible, the effects are anything but. Rising global temperatures, melting ice caps, extreme weather events—CO2 is changing the face of our planet. But how did we get here, and what can we do to reverse the tide?</p>
+        </div>
+    </section>
+
+    <!-- Discovery Section -->
+    <section id="discovery" class="section">
+        <h1>The Discovery of CO2: A Journey into the Invisible</h1>
+        <p>In the late 18th century, a quiet revolution in science unfolded within candle-lit European laboratories. Among these curious minds was Joseph Priestley, an English clergyman and chemist, who sought to uncover the mysteries of the air. In 1772, during an experiment burning various substances, Priestley isolated a gas heavier than air, a gas that extinguished flames and life itself. This was carbon dioxide. Little did he know, this discovery would later become central to our understanding of both biology and, centuries later, climate change.</p>
+        <p></p>
+    </section>
+
+ <!-- CO2 Crisis Section -->
+<section id="crisis" class="section">
+    <h1>The Invisible Crisis: How CO2 is Changing Our World</h1>
+
+    <section id="crisis" class="section fade-in-on-scroll">
+        <h1>CO2 Crisis</h1>
+        <div class="crisis-content fade-in-on-scroll">
+            <div class="image-placeholder">
+                <img src="graph.png" alt="CO2 Crisis Image">
+            </div>
+
+        <!-- Crisis Info Text -->
+        <div class="crisis-info">
+            <p>
+                The world today faces a <strong>CO2 crisis</strong> of unprecedented scale. In the last century, human activity has resulted in an <em>explosive rise</em> in CO2 emissions, accelerating global warming and destabilizing natural ecosystems. Industries, transportation, and agriculture contribute massive amounts of greenhouse gases, pushing CO2 levels far beyond what nature can absorb.
+            </p>
+            <p>
+                As the Earth's temperature climbs, <strong>polar ice melts</strong>, <em>sea levels rise</em>, and <strong>weather patterns shift dramatically</strong>, endangering countless species, including humans. Immediate action is crucial to mitigate the worst impacts of this climate catastrophe.
+            </p>
+        </div>
+    </div>
+
+    <!-- Key Observations Section -->
+    <div class="observations">
+        <h3>Key Observations:</h3>
+        <ul>
+            <li>CO2 concentrations fluctuate annually, evidenced by the range of data points in a given year.</li>
+            <li>There seems to be some anomaly or spikes in the data, particularly in the years <strong>2015–2017</strong>, where CO2 concentration sharply deviates from the trend.</li>
+            <li>Overall, despite the fluctuations, the trend shows an increase in CO2 concentration over time, starting near <strong>400 ppm</strong> in 2008 and gradually rising to around <strong>425 ppm</strong> by 2022.</li>
+        </ul>
+        <p>
+            This upward trend aligns with the increasing global atmospheric CO2 levels due to fossil fuel burning, deforestation, and other anthropogenic activities contributing to climate change. The spikes may reflect unique events, possibly related to emissions surges, natural phenomena, or data outliers.
+        </p>
+    </div>
+</section>
+  
+<!-- Sources Section -->
+<section id="sources" class="section fade-in-section">
+    <header>
+        <h1>The Shadows of Progress: Sources of Carbon Emissions</h1>
+        <h2>Understanding the Hidden Costs of Modern Life</h2>
+    </header>
+    <div class="content">
+        <div class="left-column fade-in-content">
+            <p>In bustling cities, where skyscrapers rise and vehicles hum along busy streets, modern life pulses with energy. Yet, amid this rhythm lies an unseen specter: carbon emissions. The journey begins in industrial shadows. Factories roar to life, burning fossil fuels—coal, oil, and natural gas—to power production. Smoke billows from smokestacks, releasing carbon dioxide (CO2) into the atmosphere, warming the planet. Meanwhile, the clamor of transportation fills the air. Cars, trucks, and buses, fueled by gasoline and diesel, ferry people and goods, releasing CO2 with every mile traveled. This convenience, essential to our lives, comes at a steep environmental cost. Agriculture, too, plays a significant role. From methane emitted by grazing cattle to nitrous oxide from fertilized fields, farming contributes to greenhouse gas emissions. Tractors rumble across fields, their fossil fuel engines adding further strain on the atmosphere. As night falls, homes and businesses glow with energy consumption. Heating and cooling systems, powered by coal and natural gas, transform buildings into havens but also release CO2.</p>
+        </div>
+        <div class="right-column fade-in-content">
+            <img src="industry.webp" alt="Industrial Emissions" width="600" height="300" />
+            <img src="transport.webp" alt="Transportation" width="600" height="300" />
+        </div>
+    </div>
+</section>
+
+<!----comparison page-->
+<section id="comparison" class="section">
+    <h1>Image Comparison</h1>
+    <div class="slider">
+        <img src="slider1.png" alt="Image 1" class="slide active">
+        <img src="slider2.png" alt="Image 2" class="slide">
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+<section id="narrative" class="section">
+    <h2>That Was Then, and This Is Now</h2>
+    <div class="narrative">
+        <p>For many decades, this change remained unnoticed. Early in the 20th century, people still marveled at the fruits of industrialization, the rapid growth of cities, and the wonders of modern transportation. The idea that something as invisible as CO2 could alter the climate seemed far-fetched. The world’s focus was on growth, development, and progress.</p>
+        
+        <p>But then came the tipping point. As the century wore on, subtle shifts began to take place. Glaciers that had stood frozen for thousands of years began to melt. The global temperature inched higher, and unusual weather patterns started to emerge. Droughts became more frequent. Heatwaves, once rare, started to break records year after year. Slowly, it dawned on scientists that the Earth’s climate was changing—and it was happening because of us.</p>
+
+        <p>Today, we live in the wake of that invisible revolution. CO2 levels have reached over 420 parts per million—an increase of nearly 50% since pre-industrial times. The consequences are all around us. The glaciers of Greenland and Antarctica are retreating at alarming rates, dumping trillions of tons of ice into the oceans. Coastal cities, once safe, are now on the frontlines of sea-level rise. Extreme weather has become the new normal—hurricanes more powerful, floods more frequent, and wildfires more devastating than ever before.</p>
+
+        <p>Unlike the past, we can no longer ignore the signs. The Earth’s systems are out of balance. Species are disappearing at a rate not seen since the last mass extinction, as habitats are destroyed and ecosystems disrupted. The once-predictable rhythms of nature have become erratic, threatening food supplies, water sources, and the very air we breathe.</p>
+    </div>
+</section>
+
+<!--carbon cycle-->
+<section id="carbon-cycle" class="fade-in-section">
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <h1></h1>
+            </div>
+            <div class="flip-card-back">
+                <h1>The Earth’s Breath: The Story of the Carbon Cycle</h1>
+                <p>
+                    Long before humans, a seamless exchange between land, oceans, and air sustained all life: the carbon cycle, Earth’s breath. It begins with the sun. Plants absorb sunlight and pull carbon dioxide (CO2) from the air, converting it into sugars through photosynthesis and releasing oxygen.As animals eat plants, carbon flows through the food chain. When plants and animals die, decomposers like bacteria and fungi break them down, returning carbon to the soil and air. Some carbon gets trapped underground, forming fossil fuels over millions of years.Oceans also absorb CO2, where tiny organisms use it to grow. Some of this carbon sinks to the ocean floor, stored for millennia.For millions of years, this cycle kept Earth stable. But human activities—burning fossil fuels and deforestation—have disrupted the balance, adding more CO2 to the atmosphere than nature can absorb, trapping heat and destabilizing the climate. Now, Earth’s breath grows heavier as the carbon cycle struggles to restore equilibrium.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Section for Ripple Cards -->
+ <section id="ripple-cards">
+    <h1>Climate Change: The Ripple Effect</h1>
+    <p>Understanding the far-reaching impacts of rising CO2 levels</p>
+
+    <div class="grid-container">
+        <div class="ripple-card">
+            <div class="ripple-card-inner">
+                <!-- Front side of the card -->
+                <div class="ripple-card-front">
+                    <div class="card-title">Global Warming</div>
+                    <img class="card-image" src="global-warming-its-solution.jpg" alt="Global Warming Image">
+                </div>
+                <!-- Back side of the card -->
+                <div class="ripple-card-back">
+                    <p>As CO2 traps more heat, global temperatures steadily rise, leading to severe environmental changes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ripple-card">
+            <div class="ripple-card-inner">
+                <!-- Front side of the card -->
+                <div class="ripple-card-front">
+                    <div class="card-title">Melting Ice Caps</div>
+                    <img class="card-image" src="639b38c427c0a700193e44e4.webp" alt="Melting Ice Caps Image">
+                </div>
+                <!-- Back side of the card -->
+                <div class="ripple-card-back">
+                    <p>The warming temperatures are causing polar ice caps and glaciers to melt, contributing to rising sea levels.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ripple-card">
+            <div class="ripple-card-inner">
+                <!-- Front side of the card -->
+                <div class="ripple-card-front">
+                    <div class="card-title">Extreme Weather Events</div>
+                    <img class="card-image" src="47513.avif" alt="Extreme Weather Events Image">
+                </div>
+                <!-- Back side of the card -->
+                <div class="ripple-card-back">
+                    <p>Intensified hurricanes, floods, droughts, and wildfires are becoming more common due to climate changes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ripple-card">
+            <div class="ripple-card-inner">
+                <!-- Front side of the card -->
+                <div class="ripple-card-front">
+                    <div class="card-title">Ecosystem Disruption</div>
+                    <img class="card-image" src="deforestation-environmental-damage-tropical-rain-forest-destroyed-to-construction-156401499.webp" alt="Ecosystem Disruption Image">
+                </div>
+                <!-- Back side of the card -->
+                <div class="ripple-card-back">
+                    <p>Shifts in climate patterns are disrupting ecosystems and leading to species loss worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="background-color: #04574a; padding: 20px; margin-top: 50px;">
+    <h1 style="text-align: center; color: #f5f5f5; font-size: 36px; margin-bottom: 30px;">Economic Effects</h1>
+    
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+      <!-- Card 1: Natural Disasters -->
+      <div style="background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 300px; padding: 20px;">
+        <h2 style="color: #04574a;">Natural Disasters</h2>
+        <p>
+          CO2 emissions contribute to more frequent and intense natural disasters like hurricanes, wildfires, and floods. 
+          The financial burden of recovery disrupts local economies and forces governments to reallocate funds, leaving 
+          communities vulnerable.
+        </p>
+      </div>
+      
+      <!-- Card 2: Local Economic Disruption -->
+      <div style="background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 300px; padding: 20px;">
+        <h2 style="color: #04574a;">Local Economic Disruption</h2>
+        <p>
+          Disasters fueled by CO2 emissions displace families and shutter businesses, leading to economic turmoil in 
+          affected areas. Recovery efforts drain financial resources, further crippling local economies.
+        </p>
+      </div>
+  
+      <!-- Card 3: Agricultural Strain -->
+      <div style="background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 300px; padding: 20px;">
+        <h2 style="color: #04574a;">Agricultural Strain</h2>
+        <p>
+          Rising CO2 levels disrupt weather patterns, lowering crop yields and driving up food prices. Farmers face 
+          financial strain, and consumers—especially in low-income households—are hit hardest by the rising costs.
+        </p>
+      </div>
+  
+      <!-- Card 4: Energy Sector Transition -->
+      <div style="background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 300px; padding: 20px;">
+        <h2 style="color: #04574a;">Energy Sector Transition</h2>
+        <p>
+          The fossil fuel industry faces an uncertain future as the world shifts toward renewable energy. While new jobs 
+          emerge in renewables, traditional energy workers face displacement, leading to economic upheaval in their communities.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+
+    <section id="climate-action-revolution">
+        <div class="hero">
+            <h1>Climate Action Revolution</h1>
+            <a href="#vision" class="cta-button">Join the Movement</a> <!-- Call-to-action button -->
+        </div>
+
+        <div class="content" id="content">
+            <!-- Removed paragraph for a cleaner look -->
+        </div>
+
+        <div id="vision" class="section vision">
+            <h2>Our Vision for a Greener Tomorrow</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                <div class="card";style="width: 16%;">
+                    <h3>🌞 Clean Energy</h3>
+                    <p>Communities rally together to harness solar and wind technologies.</p>
+                </div>
+                <div class="card">
+                    <h3>🌳 Forest Restoration</h3>
+                    <p>A movement to revive Earth’s forests, absorbing CO2 and restoring balance.</p>
+                </div>
+                <div class="card">
+                    <h3>🌱 Sustainable Agriculture</h3>
+                    <p>Farmers embrace regenerative practices, nurturing the soil.</p>
+                </div>
+                <div class="card">
+                    <h3>📚 Climate Education</h3>
+                    <p>Empowering the next generation through awareness and action.</p>
+                </div>
+                <div class="card">
+                    <h3>🤝 Global Cooperation</h3>
+                    <p>Nations unite under agreements, sharing technologies and strategies.</p>
+                </div>
+                <div class="card">
+                    <h3>💡 Innovative Solutions</h3>
+                    <p>Carbon pricing mechanisms incentivize emissions reductions.</p>
+                </div>
+            </div>
+        </div>
+
+       
+    </section>
+       
+    <iframe width="560" height="315" 
+src="https://www.youtube.com/embed/DPiTfmWKbgA" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+
+      
+      
+
+    <footer>
+        <div class="footer-contact">
+          <h2>Contact Us</h2>
+          <p>📧 Email: <a href="mailto:support@example.com">dhanyashreeg26@gmail.com</a></p>
+          <p>📞 Phone: <a href="tel:+1234567890">+91 8867663621</a></p>
+          <p>📍 BGS College of Engineering and Technology</p>
+      
+          <div <section id="footer">
+            <p>&copy; 2024 Climate Action Initiative. All rights reserved.</p> class="social-media">
+            <a href="https://www.facebook.com" target="https://www.facebook.com/profile.php?id=100028195845198&mibextid=kFxxJD">🔵 Facebook</a> |
+            <a href="https://www.twitter.com" target="https://x.com/_yeshasvi?t=P135a-kCpXm46ft-DhujkQ&s=08 ">🐦 Twitter</a> |
+            <a href="https://www.instagram.com" target="https://www.instagram.com/ganesh5_0?igsh=MXA5Y3V2cWwxaWJlYg==">📸 Instagram</a>
+          </div>
+        </div>
+      </footer>
+
+
+
+    <script>
+        let currentSlide = 0; // Track current slide
+    const slides = document.querySelectorAll('.slide'); // Get all slides
+
+    function changeSlide(direction) {
+        slides[currentSlide].classList.remove('active'); // Hide current slide
+        currentSlide += direction; // Update current slide index
+
+        // Loop around slides
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1; // Go to last slide
+        } else if (currentSlide >= slides.length) {
+            currentSlide = 0; // Go to first slide
+        }
+
+        slides[currentSlide].classList.add('active'); // Show new slide
+    }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+    const flipCard = document.querySelector('.flip-card');
+    const flipCardInner = document.querySelector('.flip-card-inner');
+    let isFlipped = false;
+
+    // Flip on click
+    flipCard.addEventListener('click', function() {
+        flipCardInner.style.transform = 'rotateY(180deg)';
+        isFlipped = true;
+    });
+
+    // Unflip on scroll
+    window.addEventListener('scroll', function() {
+        if (isFlipped) {
+            flipCardInner.style.transform = 'rotateY(0deg)';
+            isFlipped = false;
+        }
+    });
+});
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const fadeInSections = document.querySelectorAll('.fade-in-content');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    fadeInSections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+        window.addEventListener('scroll', function() {
+    const fadeIns = document.querySelectorAll('.fade-in-on-scroll');
+    const triggerPoint = window.innerHeight * 0.8;
+
+    fadeIns.forEach(function(element) {
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < triggerPoint) {
+            element.classList.add('is-visible');
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

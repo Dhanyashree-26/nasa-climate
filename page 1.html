@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2 and CH4 Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Blurred background */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('page1.png'); /* Use relative path */
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px); /* Adjust the value to control the blur effect */
+            z-index: -1;
+        }
+
+        .container {
+            display: flex;
+            gap: 60px; /* Increased gap between the buttons */
+            position: relative;
+            z-index: 1;
+        }
+
+        .button-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 150px;
+            background-color: #3294a3; /* Green background */
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .button-box:hover {
+            background-color: #4d5557;
+            transform: translateY(-10px); /* Button lifts when hovered */
+        }
+
+        .button-box:active {
+            background-color: #4d5557;
+            transform: translateY(0); /* Button resets when clicked */
+        }
+
+        .button-box a {
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="background"></div> <!-- Blurred background image -->
+
+    <div class="container">
+        <!-- CO2 Button -->
+        <div class="button-box" onclick="window.location.href='co2.html'">
+            <a href="#">Carbon di Oxide</a>
+        </div>
+
+        <!-- CH4 Button -->
+        <div class="button-box" onclick="window.location.href='methane.html'">
+            <a href="#">Methane</a>
+        </div>
+    </div>
+
+</body>
+</html>

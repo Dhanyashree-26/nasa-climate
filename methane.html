@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Climate Change Awareness & Discovery of CH4</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #04574a; /* Dark Green */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #00332f; /* Darker Green */
+            border-radius: 5px;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home {
+            background-color: #087a67;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        #home .cta {
+            background-color: #00332f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #home .cta:hover {
+            transform: scale(1.1);
+        }
+
+        .image-placeholder {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background-color: #ccc;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #info {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        #info h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #7ec9bc;
+        }
+
+        #info p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        #discovery {
+            background-color: #04574a;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        #discovery h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #discovery p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #e0e0e0;
+        }
+
+        #discovery p::first-letter {
+            font-size: 1 .5em;
+            font-weight: bold;
+            color : #ffdf00;
+        }
+
+        #crisis {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        #crisis h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #7ec9bc;
+        }
+
+        #crisis p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #333;
+        }
+
+        .crisis-content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            max-width: 1000px;
+        }
+
+        .image-placeholder {
+            flex: 0 0 45%;
+            margin-right: 30px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .crisis-info {
+            flex: 0 0 50%;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        #cycle {
+            background-color: #04574a;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        #cycle h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #7ec9bc;
+        }
+
+        #cycle p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.8;
+            text-align: justify;
+            color: white;
+        }
+
+        .cycle-content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            max-width: 1000px;
+        }
+
+        .cycle-info {
+            flex: 0 0 50%;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        #source {
+            background-color: white; /* White background */
+            color: black; /* Set font color to black */
+            text-align: center;
+            padding: 50px 20px;
+            width: 100vw; /* Full width */
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #source h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: black; /* Font color set to black */
+        }
+
+        .source-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            max-width: 1000px;
+            margin: 0 auto; /* Center the content horizontally */
+        }
+
+        .source-content .image-placeholder {
+            flex: 0 0 45%;
+            margin-right: 30px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .source-content .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        /* Ensure all text inside .climate-info is black */
+        .source-info {
+            flex: 0 0 50%;
+            text-align: left;
+            margin-top: 40px;
+            color: black !important; /* Force font color to black */
+        }
+
+        .source-info p {
+            color: black !important; /* Force paragraph text color to black */
+            font-size: 1.2rem;
+        }
+
+        /* Strategies Section */
+        #strategies {
+            background-color: #04574a; /* Dark Green like discovery */
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        #strategies h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #7ec9bc; /* Light Green for headings */
+        }
+
+        #strategies p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.8;
+            text-align: justify;
+            color: white !important; /* Ensure white text */
+        }
+
+        .strategies-content {
+            display: flex;
+            justify-content: space-between;
+            margin-top:  20px;
+            max-width: 1000px ;
+            margin: 0 auto; /* Center content */
+        }
+
+        .strategies-content .image-placeholder {
+            flex: 0 0 45%;
+            margin-right: 30px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .strategies-content .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .strategies-info {
+            flex: 0 0 50%;
+            text-align: left;
+            margin-top: 40px;
+            color: white !important; /* Ensure white text */
+        }
+
+        .strategies-info p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: white !important; /* Ensure white text */
+        }
+
+        @media (max-width: 768px) {
+            #strategies h1 {
+                font-size: 2.2rem;
+            }
+
+            .strategies-content {
+                flex-direction: column;
+            }
+
+            .strategies-content .image-placeholder {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .strategies-content .strategies-info {
+                margin-top: 0;
+            }
+        }
+
+        /* Solution Section */
+        #solution {
+            background-color: white; /* Ensure white background */
+            color: black; /* Text color */
+            padding: 50px 20px;
+            width: 100vw; /* Make sure it fills the entire viewport width */
+            margin: 0; /* Ensure no margins */
+            text-align: center;
+            box-sizing: border-box; /* Ensure padding is included in the width calculation */
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #solution h1 {
+            font-size: 2.5rem;
+            color: #7ec9bc; /* Light Green for headings */
+            margin-bottom: 20px;
+        }
+
+        #solution p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            text-align: justify;
+            color: #333; /* Ensure text remains readable */
+        }
+
+        .solution-content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            max-width: 1000px;
+            margin: 0 auto; /* Center content */
+        }
+
+        .solution-content .image-placeholder {
+            flex: 0 0 45%;
+            margin-right: 30px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #ccc; /* Gray background for placeholder */
+        }
+
+        .solution-content .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .solution-info {
+            flex: 0 0 50%;
+            text-align: left;
+            margin-top: 40px;
+            color: #333;
+        }
+
+        .solution-info p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            #solution h1 {
+                font-size: 2.2rem;
+            }
+
+            .solution-content {
+                flex-direction: column;
+            }
+
+            .solution-content .image-placeholder {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .solution-content .solution-info {
+                margin-top: 0;
+            }
+        }
+
+        /* Image Comparison Section */
+        .image-comparison {
+            padding: 50px;
+            text-align: center;
+            background-color: #04574a; /* Light background for sections */
+        }
+
+        .image-comparison h1 {
+            font-size: 2.5rem;
+            color: #04574a;
+            margin-bottom: 20px;
+        }
+
+        .image-comparison h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .narrative {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .slider {
+            position : relative;
+            width: 50%; /* Set width for the slider */
+            margin: 0 auto; /* Center the slider */
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slide {
+            display: none; /* Hide all images by default */
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .slide.active {
+            display: block; /* Show only the active image */
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        footer {
+            background-color: #04574a; /* Dark green background */
+            padding: 30px;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center align text */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+          }
+          
+          .footer-contact h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+          
+          .footer-contact p {
+            margin: 5px 0;
+            font-size: 16px;
+          }
+          
+          .footer-contact a {
+            color: white;
+            text-decoration: none;
+          }
+          
+          .footer-contact a:hover {
+            text-decoration: underline;
+          }
+          
+          .social-media {
+            margin-top: 15px;
+          }
+          
+          .social-media a {
+            margin: 0 15px;
+            font-size: 16px;
+          }
+          
+          .social-media a:hover {
+            color: #c0ffb3; /* Lighter green on hover */
+          }
+
+        @media (max-width: 768px) {
+            .slider {
+                width: 100%; /* Make the slider full width on small screens */
+            }
+
+            h1, h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#info">Information</a></li>
+            <li><a href="#discovery">Discovery</a></li>
+            <li><a href="#crisis">Crisis</a></li>
+            <li><a href="#cycle">Methane Cycle</a></li>
+            <li><a href="#source">Sources</a></li>
+            <li><a href="#image-comparison">Past vs Present</a></li>
+            <li><a href="#strategies">Reduction Strategies</a></li>
+            <li><a href="#solution">Solution</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h1>Climate Change Awareness</h1>
+        <p>Protecting Our Planet: Addressing Climate Change and Reducing CH₄ Emissions for a Sustainable Future</p>
+        <div class="image-placeholder">
+            <img src="ch4.jpg" alt="CH4">
+        </div>
+        <button class="cta" onclick="scrollToSection('info')">Learn More</button>
+    </section>
+
+    <!-- Information Section -->
+    <section id="info" class="section">
+        <h1>Introduction</h1>
+        <p>Methane (CH₄) is a potent greenhouse gas, over 25 times more effective at trapping heat in the atmosphere than carbon dioxide over a 100-year period. Methane emissions stem from various human activities, including agriculture, fossil fuel production, and landfills. Though methane has a shorter atmospheric lifetime compared to CO₂, its significant warming impact makes it a key driver of climate change. Understanding and mitigating methane emissions is essential to curb the accelerating rate of global warming.</p>
+    </section>
+
+    <!-- Discovery Section -->
+    <section id="discovery" class="section">
+        <h1>The Discovery of CH₄: A Journey into the Invisible</h1>
+        <p>In 1776, the Italian physicist Alessandro Volta discovered methane while studying the gases produced in marshes. Volta captured "flammable air" using a glass container and a tube, recognizing that this gas could combust. It was later identified as methane. Methane's simplicity—a molecule consisting of one carbon atom and four hydrogen atoms—belies its powerful role in the earth’s natural processes and industrial activities. Despite being invisible and odorless, methane has a profound impact on the environment due to its ability to trap heat in the atmosphere.</p>
+    </section>
+
+    <!-- Crisis Section -->
+    <section id="crisis" class="section">
+        <h1>CH₄ and the Climate Crisis</h1>
+        <div class="crisis-content">
+            <div class="image-placeholder">
+                <img src="methane_crisis.jpg" alt="Methane Crisis Image">
+            </div>
+            <div class="crisis-info">
+                <p>Methane emissions contribute significantly to the rapid rise in global temperatures. As a greenhouse gas, it is responsible for about 30% of the current global warming. The main sources of methane emissions include livestock farming, oil and gas production, and the decomposition of organic waste in landfills. While methane breaks down more quickly than CO₂, reducing methane emissions in the short term is crucial to slowing down climate change and mitigating its catastrophic impacts.</p>
+            </div>
+        </div>
+        <!-- Key Observations Section for CH₄ -->
+        <div class="observations" style="font-size: 18px; line-height: 1.6; text-align: justify;">
+            <h3 style="font-size: 24px; font-weight: bold;">Key Observations:</h3>
+            <ul>
+                <li>CH₄ concentrations fluctuate annually, influenced by seasonal variations in natural emissions from wetlands and agriculture.</li>
+                <li>There were notable spikes in methane data during the years <strong>2015–2017</strong>, possibly due to exceptional emission events like agricultural expansion or increased fossil fuel extraction.</li>
+                <li>Overall, despite fluctuations, the trend shows an increase in CH₄ concentration over time, rising from around <strong>1,800 ppb</strong> in 2008 to approximately <strong>1,900 ppb</strong> by 2022.</li>
+            </ul>
+            <p style="margin-top: 10px;">
+                This upward trend is primarily driven by human activities, including fossil fuel extraction, livestock farming, and waste decomposition, which are significant contributors to CH₄ emissions. Additionally, methane emissions from natural sources, such as wetlands and thawing permafrost, play a role, especially as climate feedback loops intensify warming.
+            </p>
+        </div>
+    </section>
+
+    <!-- Methane Cycle Section -->
+    <section id="cycle" class="section">
+        <h1>Methane Cycle</h1>
+        <div class="cycle-content">
+            <div class="image-placeholder">
+                <img src="cycle.jpg" alt="Methane Cycle">
+            </div>
+            <div class="cycle-info">
+                <p>Deep within the Earth and high above the clouds, methane (CH4) begins a journey that’s as old as time itself. Born in the dark, soggy wetlands or the bellies of grazing animals, methane rises into the atmosphere, invisible yet potent. For years, it floats above us, silently absorbing heat from the sun, contributing to the planet's warming.</p>
+                <p>But methane’s life is not eternal. High in the sky, sunlight begins to break it apart. The invisible rays strike methane, shattering it into smaller pieces—water vapor and carbon dioxide—both lingering in the atmosphere for years. In the oceans, microscopic life forms called methanotrophs consume methane before it even reaches the air, creating a delicate balance that helps keep our planet’s climate in check.</p>
+                <p>Meanwhile, down on the ground, human activities tip the scales. Fossil fuel extraction, agriculture, and landfills pump methane into the sky faster than nature can break it down. The cycle, once balanced by nature’s rhythms, is now thrown off course. Still, methane continues its ancient dance—emerging, rising, transforming, and vanishing—while we watch, wondering if we can restore the balance before its warming grip becomes too strong to escape.</p>
+            </div>
+        </div>
+
+        <!-- Source Section -->
+        <section id="source" class="section">
+            <h1>Emission Sources</h1>
+            <div class="source-content">
+                <div class="image-placeholder">
+                    <img src="source.jpg" alt="Climate Impact Image">
+                </div>
+                <div class="source-info">
+                    <p>Natural Sources:</p>
+                    <p>1.Swamps and Wetlands: Methane was once hidden in the whispers of swamps and wetlands. Microbes deep in the mud feast on organic matter, creating pockets of methane that rise up through the water’s surface like invisible bubbles.</p>
+                    <p>2.Grazing Animals: In the fields, herds of cattle graze peacefully. Inside their stomachs, bacteria break down their food, releasing methane into the air with each breath and burp.</p>
+                    <p>Human Sources:</p>
+                    <p>1.Agriculture: Flooded rice paddies create environments where microbes produce methane.</p>
+                    <p>2.Fossil Fuels: Methane escapes during the digging, drilling, and extraction of fossil fuels like oil, coal, and natural gas</p>
+                    <p>3.Landfills: In landfills, the decay of human waste releases methane, making trash another source of this potent gas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Comparison Section -->
+        <section id="image-comparison" class="image-comparison">
+            <h1>Past vs Present</h1>
+            <div class="slider">
+                <img src="e1.png" alt="New Image 1" class="slide active">
+                <img src="e2.png" alt="New Image 2" class="slide">
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+         <!-- Narrative Section -->
+         <section id="narrative" class="section">
+            <h2>That Was Then, and This Is Now</h2>
+            <div class="narrative">
+                <p>For many years, the rise of methane (CH4) levels went unnoticed. Early in the 20th century, the focus was on industrialization and urban growth. The idea that an invisible gas like methane could impact our climate seemed outlandish.</p>
+
+                <p>But a tipping point arrived. Methane emissions increased from wetlands, rice paddies, and grazing animals. Human activities intensified this. Fossil fuels, agriculture, and waste management contributed to high methane levels in the atmosphere.</p>
+
+                <p>As methane levels soared, scientists realized the atmosphere was changing. Methane, though short-lived, traps heat more effectively than CO2, leading to rapid warming. The Arctic's permafrost began to thaw, releasing more methane—a feedback loop. Weather patterns grew erratic, and extreme events increased.</p>
+
+                <p>Today, methane levels are at historic highs, nearly 1940 parts per billion, up 15% since pre-industrial times. The impact is visible: thawing permafrost, increased storm severity, and rising global temperatures. Methane’s potent effect on climate underscores the urgency of addressing its emissions.</p>
+              
+                <p>We must act to rebalance Earth's systems. Cutting methane emissions through innovative agricultural practices, better waste management, and reducing fossil fuel leaks is crucial. By addressing methane, we can mitigate severe impacts of climate change and strive towards a sustainable future.</p>
+            </div>
+        </section>
+
+    </section> <!-- Reduction Strategies Section -->
+    <section id="strategies" class="section">
+        <h1>Strategies to Reduce CH₄ Emissions</h1>
+        <div class="strategies-content">
+            <div class="image-placeholder">
+                <img src="reduce.jpg" alt="Strategies Image">
+            </div>
+            <div class="strategies-info">
+                <p>Mitigating methane emissions is essential to slowing down the pace of climate change. Here are some effective strategies :</p>
+                <p><strong>1. Improving Agricultural Practices:</strong> Implementing sustainable livestock management and altering feed to reduce methane emissions from enteric fermentation in animals.</p>
+                <p><strong>2. Reducing Fossil Fuel Emissions:</strong> Capturing and preventing methane leaks from oil and gas operations by improving detection and implementing stricter regulations.</p>
+                <p><strong>3. Waste Management:</strong> Improving waste management systems, such as reducing organic waste in landfills and utilizing methane capture technologies in waste decomposition processes.</p>
+                <p><strong>4. Wetland Restoration:</strong> Restoring natural ecosystems such as wetlands can help mitigate methane emissions by enhancing natural methane sinks.</p>
+                <p><strong>5. Policy and Legislation:</strong> Governments should enforce stricter regulations and incentives for industries to adopt cleaner technologies and reduce methane emissions.</p>
+            </div>
+        </div>
+    </section>
+        <!-- Solution Section -->
+        <section id="solution">
+            <h1>A New Dawn: Crafting Solutions to Harness Methane’s Potential</h1>
+            <p>
+                In the unfolding story of Earth’s climate, methane has become the wild card—a powerful player that can either drive disaster or be tamed by human ingenuity. As we stand on the brink of two futures, a bold new path begins to emerge, where innovation and action lead the way.
+
+                Imagine a world where farms become laboratories of change. Scientists develop feed additives for livestock that suppress methane at its source, transforming cow burps from a climate threat into something manageable. In flooded rice paddies, new irrigation techniques disrupt methane production while keeping yields high for the growing global population.
+            </p>
+
+            <div class="solution-content">
+                <!-- Placeholder for Solution Image -->
+                <div class="image-placeholder">
+                    <img src="solution.jpg" alt="Solution Image">
+                </div>
+
+                <!-- Solution Information -->
+                <div class="solution-info">
+                    <p>
+                        In bustling cities, methane from landfills is no longer released into the atmosphere—it’s captured, filtered, and turned into clean energy that powers homes and businesses. Pipelines and oil rigs are no longer invisible sources of methane leaks, thanks to advanced sensors that spot emissions in real-time, sealing them before the gas escapes.
+
+                        Global leaders, too, are stepping up. Policies like the Global Methane Pledge hold countries accountable for cutting emissions while encouraging cooperation on new technologies and strategies. With every solution, methane’s role in climate change shrinks.
+                    </p>
+                    <p>
+                        <b>The future isn’t fixed. Through innovation, collaboration, and bold action, we are writing a story where methane is no longer a threat—but part of the solution.</b>
+                    </p>
+                </div>
+            </div>
+
+            <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/Oj-Vdn6sdkQ" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+    
+            <footer>
+                <div class="footer-contact">
+                  <h2>Contact Us</h2>
+                  <p>📧 Email: <a href="mailto:support@example.com">dhanyashreeg26@gmail.com</a></p>
+                  <p>📞 Phone: <a href="tel:+1234567890">+91 8867663621</a></p>
+                  <p>📍 BGS College of Engineering and Technology</p>
+              
+                  <div class="social-media">
+                    <a href="https://www.facebook.com" target="https://www.facebook.com/profile.php?id=100028195845198&mibextid=kFxxJD">🔵 Facebook</a> |
+                    <a href="https://www.twitter.com" target="https://x.com/_yeshasvi?t=P135a-kCpXm46ft-DhujkQ&s=08 ">🐦 Twitter</a> |
+                    <a href="https://www.instagram.com" target="https://www.instagram.com/ganesh5_0?igsh=MXA5Y3V2cWwxaWJlYg==">📸 Instagram</a>
+                  </div>
+                </div>
+              </footer>
+
+        <script>
+            function scrollToSection(sectionId) {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('.section');
+                const navLinks = document.querySelectorAll('nav ul li a');
+
+                let currentSection = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(currentSection)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+
+            function changeSlide(direction) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + direction + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+        </script>
+    </body>
+</html>
